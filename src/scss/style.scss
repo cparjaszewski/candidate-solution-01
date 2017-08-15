@@ -1,0 +1,80 @@
+@import "_reset";
+@import "_bootstrap";
+
+@mixin calc($property, $expression) {
+  #{$property}: -moz-calc(#{$expression});
+  #{$property}: -webkit-calc(#{$expression});
+  #{$property}: calc(#{$expression});
+}
+
+*{
+	box-sizing: border-box;
+}
+
+main{
+	margin: 0 auto;
+	margin-top: 50px;
+	width: 90%;
+	height: 90%;
+}
+nav{
+	overflow: auto;
+	margin-bottom: 20px !important;
+}
+.tab-content{
+	padding: 0 20px;
+}
+
+#create{
+	.input-box{
+		border: 1px solid #dddddd;
+		padding: 10px;
+		border-radius: 10px;
+		margin-top: 10px;
+	}
+
+	.add-input{
+		margin-top: 20px;
+	}
+}
+
+#preview{
+	.input-box{
+		border: 1px solid #dddddd;
+		padding: 10px;
+		border-radius: 10px;
+		margin-top: 10px;
+	}
+}
+
+
+// TOAST
+#toast {
+	position: absolute;
+	z-index: 1;
+	width: 200px;
+	background-color: #333333;
+	bottom: 30px;
+	text-align: center;
+	color: #ffffff;
+    border-radius: 5px;
+    padding: 15px;
+    left: 50%;
+    margin-left: -100px;
+    visibility: hidden;
+
+    &.showToast {
+    	visibility: visible;
+	    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+	}
+}
+
+@keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}
